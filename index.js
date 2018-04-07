@@ -1,6 +1,6 @@
 const express = require('express')
 const app = express()
-var lotto = Math.floor(Math.random() * 1000) + 1
+var lotto = Math.floor(Math.random() * 10)
 console.log('lotto=', lotto)
 
 app.get('/', (req, res) => res.send({status: true}))
@@ -16,7 +16,7 @@ app.get('/lotto/:number', (req, res) => {
     res.send('X')
   } else if (num === lotto) {
     res.send('Y')
-    lotto = Math.floor(Math.random() * 1000) + 1
+    lotto = Math.floor(Math.random() * 10)
     console.log('lotto=', lotto)
   } else {
     res.send('N')
